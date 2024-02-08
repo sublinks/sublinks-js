@@ -17,7 +17,6 @@ jobs:
           minor-wording: 'minor,Minor,add,Add,adds,Adds,new,New'
           patch-wording: 'fix,Fix,fixes,Fixes,patch,Patch'
           rc-wording: 'rc,pre'
-          hours-to-go-back: 24
           skip-if-no-commits: 'true'
           tag-prefix: 'v'
           commit-message: 'CI: bumps version to {{version}} [skip ci]'
