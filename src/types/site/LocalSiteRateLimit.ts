@@ -1,0 +1,20 @@
+export type LocalSiteRateLimit = {
+  id: number;
+  local_site_id: number;
+  message: number;
+  message_per_second: number;
+  post: number;
+  post_per_second: number;
+  register: number;
+  register_per_second: number;
+  image: number;
+  image_per_second: number;
+  comment: number;
+  comment_per_second: number;
+  search: number;
+  search_per_second: number;
+  import_user_settings: number;
+  import_user_settings_per_second: number;
+  published: string;
+  updated: string;
+};

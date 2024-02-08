@@ -1,0 +1,33 @@
+import { ListingType } from '../../enums/ListingType.js';
+import { PostListingMode } from '../../enums/PostListingMode.js';
+import { SortType } from '../../enums/SortType.js';
+
+export type LocalUser = {
+  id: number;
+  person_id: number;
+  email: string;
+  show_nsfw: boolean;
+  theme: string;
+  default_sort_type: SortType;
+  default_listing_type: ListingType;
+  interface_language: string;
+  show_avatars: boolean;
+  send_notifications_to_email: boolean;
+  validator_time: string;
+  show_scores: boolean;
+  show_bot_accounts: boolean;
+  show_read_posts: boolean;
+  email_verified: boolean;
+  accepted_application: boolean;
+  totp_2fa_url: string;
+  open_links_in_new_tab: boolean;
+  blur_nsfw: boolean;
+  auto_expand: boolean;
+  infinite_scroll_enabled: boolean;
+  admin: boolean;
+  post_listing_mode: PostListingMode;
+  collapse_bot_comments: boolean;
+  totp_2fa_enabled: boolean;
+  enable_keyboard_navigation: boolean;
+  enable_animated_images: boolean;
+};
