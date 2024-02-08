@@ -10,7 +10,7 @@
   <img src="https://avatars.githubusercontent.com/u/153321235?s=200&v=4" width=200px height=200px></img>
   <h3 align="center"><a href="">Sublinks JS</a></h3>
   <p align="center">
-    A js library for interacting with the Sublinks API.
+    A JavaScript library for interacting with the sublinks API.
   </p>
 </div>
 
