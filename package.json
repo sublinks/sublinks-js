@@ -23,7 +23,8 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --check \"./**/*.{ts}\"",
-    "format:fix": "prettier --write \"./**/*.ts\""
+    "format:fix": "prettier --write \"./**/*.ts\"",
+    "docs": "typedoc"
   },
   "type": "module",
   "dependencies": {

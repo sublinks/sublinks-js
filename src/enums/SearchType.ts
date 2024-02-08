@@ -1,8 +1,8 @@
 export enum SearchType {
-  All,
-  Comments,
-  Posts,
-  Communities,
-  Users,
-  Url,
+  All = 'All',
+  Comments = 'Comments',
+  Posts = 'Posts',
+  Communities = 'Communities',
+  Users = 'Users',
+  Url = 'Url',
 }

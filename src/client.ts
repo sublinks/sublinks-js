@@ -1,4 +1,10 @@
+import { LoginRequest } from './requestTypes/user/LoginRequest.js';
+import { GetPostsRequest } from './requestTypes/post/GetPostsRequest.js';
 import { GetSiteResponse } from './responseTypes/site/GetSiteResponse.js';
+import { GetPostsResponse } from './responseTypes/post/GetPostsResponse.js';
+import { SuccessResponse } from './responseTypes/user/SuccessResponse.js';
+import { GetCommentsResponse } from './responseTypes/comment/GetCommentsResponse.js';
+import { GetCommentsRequest } from './requestTypes/comment/GetCommentsRequest.js';
 
 interface HeaderMap {
   [key: string]: string;
@@ -36,6 +42,55 @@ export class SublinksClient {
     });
   }
 
+  async getPosts(request?: GetPostsRequest) {
+    return await this.#apiWrapper<GetPostsResponse>({
+      path: 'post/list',
+      method: 'GET',
+      data: request,
+    });
+  }
+
+  async getComments(request?: GetCommentsRequest) {
+    return await this.#apiWrapper<GetCommentsResponse>({
+      path: 'comment/list',
+      method: 'GET',
+      data: request,
+    });
+  }
+
+  async login(request: LoginRequest) {
+    return await this.#apiWrapper<SuccessResponse>({
+      path: 'user/login',
+      method: 'POST',
+      data: request,
+    });
+  }
+
+  setHeader({ key, value }: { key: string; value: string }) {
+    this.#headers[key] = value;
+  }
+
+  setHeaders(headers: HeaderMap) {
+    this.#headers = {
+      ...this.#headers,
+      ...headers,
+    };
+  }
+
+  removeHeader(key: string) {
+    delete this.#headers[key];
+  }
+
+  removeHeaders(keys: string[]) {
+    keys.forEach((key) => {
+      delete this.#headers[key];
+    });
+  }
+
+  clearHeaders() {
+    this.#headers = {};
+  }
+
   async #apiWrapper<ResponseType>({
     path,
     method = 'GET',
@@ -47,19 +102,42 @@ export class SublinksClient {
     data?: object;
     headers?: HeaderMap;
   }): Promise<ResponseType> {
-    const response = await fetch(`${this.#apiUrl}/${path}`, {
-      method,
-      headers: {
-        ...this.#headers,
-        ...headers,
+    const response = await fetch(
+      `${this.#apiUrl}/${path}${method === 'GET' ? `${this.#jsonToQueryString(data)}` : ''}`,
+      {
+        method,
+        headers: {
+          ...this.#headers,
+          ...headers,
+        },
+        body: method === 'GET' ? undefined : JSON.stringify(data),
       },
-      body: data ? undefined : JSON.stringify(data),
-    });
+    );
 
     if (!response.ok) {
       throw new Error(response.statusText ?? 'Bad API response');
     }
 
     return await response.json();
+  }
+
+  #jsonToQueryString(json?: object) {
+    if (!json) {
+      return '';
+    }
+
+    const query = Object.entries(json)
+      .filter(([, value]) => value !== undefined)
+      .map(
+        ([key, value]) =>
+          `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
+      )
+      .join('&');
+
+    if (query.length === 0) {
+      return '';
+    }
+
+    return `?${query}`;
   }
 }

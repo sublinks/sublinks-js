@@ -1,6 +1,6 @@
 export enum CommentSortType {
-  Hot,
-  Top,
-  New,
-  Old,
+  Hot = 'Hot',
+  Top = 'Top',
+  New = 'New',
+  Old = 'Old',
 }

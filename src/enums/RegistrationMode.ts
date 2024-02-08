@@ -1,5 +1,5 @@
 export enum RegistrationMode {
-  Closed,
-  RequireApplication,
-  Open,
+  Closed = 'Closed',
+  RequireApplication = 'RequireApplication',
+  Open = 'Open',
 }

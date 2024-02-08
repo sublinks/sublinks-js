@@ -1,5 +1,5 @@
 export enum PostListingMode {
-  List,
-  Card,
-  SmallCard,
+  List = 'List',
+  Card = 'Card',
+  SmallCard = 'SmallCard',
 }

@@ -1,5 +1,5 @@
 export enum SubscribedType {
-  Subscribed,
-  NotSubscribed,
-  Pending,
+  Subscribed = 'Subscribed',
+  NotSubscribed = 'NotSubscribed',
+  Pending = 'Pending',
 }

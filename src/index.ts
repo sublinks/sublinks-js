@@ -16,13 +16,17 @@ export * from './enums/SubscribedType.js';
 export * from './requestTypes/admin/AddAdminRequest.js';
 export * from './requestTypes/admin/AdminPurgeCommentRequest.js';
 export * from './requestTypes/comment/CommentReplyRequest.js';
+export * from './requestTypes/comment/GetCommentsRequest.js';
 export * from './requestTypes/post/GetPostRequest.js';
+export * from './requestTypes/post/GetPostsRequest.js';
 export * from './requestTypes/user/LoginRequest.js';
 
 // Response Types
 export * from './responseTypes/admin/AddAdminResponse.js';
 export * from './responseTypes/comment/CommentReplyResponse.js';
+export * from './responseTypes/comment/GetCommentsResponse.js';
 export * from './responseTypes/post/GetPostResponse.js';
+export * from './responseTypes/post/GetPostsResponse.js';
 export * from './responseTypes/site/GetSiteResponse.js';
 export * from './responseTypes/user/SuccessResponse.js';
 
@@ -30,6 +34,7 @@ export * from './responseTypes/user/SuccessResponse.js';
 export * from './types/comment/Comment.js';
 export * from './types/comment/CommentAggregates.js';
 export * from './types/comment/CommentReplyView.js';
+export * from './types/comment/CommentView.js';
 export * from './types/community/Community.js';
 export * from './types/community/CommunityAggregates.js';
 export * from './types/community/CommunityBlockView.js';
@@ -57,16 +62,3 @@ export * from './types/user/Person.js';
 export * from './types/user/PersonAggregates.js';
 export * from './types/user/PersonBlockView.js';
 export * from './types/user/PersonView.js';
-
-import { SublinksClient } from './client.js';
-
-const client = new SublinksClient({
-  instance: 'programming.dev',
-});
-
-main();
-
-async function main() {
-  console.log(client);
-  console.log(await client.getSite());
-}

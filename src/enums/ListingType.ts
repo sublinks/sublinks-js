@@ -1,6 +1,6 @@
 export enum ListingType {
-  All,
-  Local,
-  Subscribed,
-  ModeratorView,
+  All = 'All',
+  Local = 'Local',
+  Subscribed = 'Subscribed',
+  ModeratorView = 'ModeratorView',
 }
