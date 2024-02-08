@@ -5,6 +5,8 @@ import { GetPostsResponse } from './responseTypes/post/GetPostsResponse.js';
 import { SuccessResponse } from './responseTypes/user/SuccessResponse.js';
 import { GetCommentsResponse } from './responseTypes/comment/GetCommentsResponse.js';
 import { GetCommentsRequest } from './requestTypes/comment/GetCommentsRequest.js';
+import { CreatePrivateMessageRequest } from './requestTypes/privatemessage/CreatePrivateMessageRequest.js';
+import { CreatePrivateMessageResponse } from './responseTypes/privatemessage/CreatePrivateMessageResponse.js';
 
 interface HeaderMap {
   [key: string]: string;
@@ -61,6 +63,30 @@ export class SublinksClient {
   async login(request: LoginRequest) {
     return await this.#apiWrapper<SuccessResponse>({
       path: 'user/login',
+      method: 'POST',
+      data: request,
+    });
+  }
+
+  async removePost(request: RemovePostRequest) {
+    return await this.#apiWrapper<RemovePostResponse>({
+      path: 'post/remove',
+      method: 'POST',
+      data: request,
+    });
+  }
+
+  async removeComment(request: RemoveCommentRequest) {
+    return await this.#apiWrapper<RemoveCommentResponse>({
+      path: 'comment/remove',
+      method: 'POST',
+      data: request,
+    });
+  }
+
+  async createPrivateMessage(request: CreatePrivateMessageRequest) {
+    return await this.#apiWrapper<CreatePrivateMessageResponse>({
+      path: 'private_message',
       method: 'POST',
       data: request,
     });

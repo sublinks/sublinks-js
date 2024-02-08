@@ -19,6 +19,7 @@ export * from './requestTypes/comment/CommentReplyRequest.js';
 export * from './requestTypes/comment/GetCommentsRequest.js';
 export * from './requestTypes/post/GetPostRequest.js';
 export * from './requestTypes/post/GetPostsRequest.js';
+export * from './requestTypes/privatemessage/CreatePrivateMessageRequest.js';
 export * from './requestTypes/user/LoginRequest.js';
 
 // Response Types
@@ -27,6 +28,7 @@ export * from './responseTypes/comment/CommentReplyResponse.js';
 export * from './responseTypes/comment/GetCommentsResponse.js';
 export * from './responseTypes/post/GetPostResponse.js';
 export * from './responseTypes/post/GetPostsResponse.js';
+export * from './responseTypes/privatemessage/CreatePrivateMessageResponse.js';
 export * from './responseTypes/site/GetSiteResponse.js';
 export * from './responseTypes/user/SuccessResponse.js';
 
@@ -62,3 +64,5 @@ export * from './types/user/Person.js';
 export * from './types/user/PersonAggregates.js';
 export * from './types/user/PersonBlockView.js';
 export * from './types/user/PersonView.js';
+export * from './types/privatemessage/PrivateMessage.js';
+export * from './types/privatemessage/PrivateMessageView.js';
