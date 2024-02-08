@@ -19,7 +19,11 @@
   "scripts": {
     "start": "npm run build && node ./dist/index.js",
     "build": "tsup",
-    "test": "vitest"
+    "prepare": "husky",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --check \"./**/*.{ts}\"",
+    "format:fix": "prettier --write \"./**/*.ts\""
   },
   "type": "module",
   "dependencies": {

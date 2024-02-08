@@ -44,8 +44,8 @@ export class SublinksClient {
   }: {
     path: string;
     method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
-    data?: any;
-    headers?: any;
+    data?: object;
+    headers?: HeaderMap;
   }): Promise<ResponseType> {
     const response = await fetch(`${this.#apiUrl}/${path}`, {
       method,
