@@ -1,5 +1,5 @@
-import { SubscribedType } from '../enums/SubscribedType.js';
-import { Community } from './community/Community.js';
+import { SubscribedType } from '../../enums/SubscribedType.js';
+import { Community } from './Community.js';
 import { CommunityAggregates } from './CommunityAggregates.js';
 
 export type CommunityView = {

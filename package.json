@@ -1,7 +1,7 @@
 {
-  "name": "sublinks-bot",
+  "name": "sublinks-js",
   "version": "0.1.0",
-  "description": "A bot library for sublinks.",
+  "description": "A JavaScript library for interacting with the sublinks API.",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -33,6 +33,7 @@
     "husky": "^9.0.10",
     "prettier": "^3.2.5",
     "tsup": "^8.0.1",
+    "typedoc": "^0.25.7",
     "typescript": "^5.3.3"
   }
 }
