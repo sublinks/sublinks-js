@@ -7,6 +7,10 @@ import { GetCommentsResponse } from './responseTypes/comment/GetCommentsResponse
 import { GetCommentsRequest } from './requestTypes/comment/GetCommentsRequest.js';
 import { CreatePrivateMessageRequest } from './requestTypes/privatemessage/CreatePrivateMessageRequest.js';
 import { CreatePrivateMessageResponse } from './responseTypes/privatemessage/CreatePrivateMessageResponse.js';
+import { RemovePostRequest } from './requestTypes/post/RemovePostRequest.js';
+import { RemovePostResponse } from './responseTypes/post/RemovePostResponse.js';
+import { RemoveCommentRequest } from './requestTypes/comment/RemoveCommentRequest.js';
+import { RemoveCommentResponse } from './responseTypes/comment/RemoveCommentResponse.js';
 
 interface HeaderMap {
   [key: string]: string;

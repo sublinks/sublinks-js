@@ -21,9 +21,9 @@
     "build": "tsup",
     "prepare": "husky",
     "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
-    "format": "prettier --check \"./**/*.{ts}\"",
-    "format:fix": "prettier --write \"./**/*.ts\"",
+    "lint:fix": "eslint . --ext .ts --fix && git add \"./**/*.ts\"",
+    "format": "prettier --check \"./**/*.ts\"",
+    "format:fix": "prettier --write \"./**/*.ts\" && git add \"./**/*.ts\"",
     "docs": "typedoc"
   },
   "type": "module",
