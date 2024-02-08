@@ -1,7 +1,6 @@
 <div align="center">
   
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/release/sublinks/sublinks-js.svg?style=for-the-badge)
-[![GitHub issues](https://img.shields.io/github/issues-raw/sublinks/sublinks-js.svg?style=for-the-badge)](https://github.com/sublinks/sublinks-markdown/issues)
 [![License](https://img.shields.io/github/license/sublinks/sublinks-js.svg?style=for-the-badge)](LICENSE)
 ![GitHub stars](https://img.shields.io/github/stars/sublinks/sublinks-js.svg?style=for-the-badge)
 
